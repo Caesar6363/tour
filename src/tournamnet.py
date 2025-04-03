@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-=======
-
-import time
->>>>>>> Stashed changes
 import random as r
 from src.heroes import (
     Archer,
@@ -47,23 +42,15 @@ class Fight:
 
             self.hit(player1, player2)
             if player1.hp <= 0:
-<<<<<<< Updated upstream
-=======
                 print(f"Игрок {player1.name} {player1.nickname} проигрывает бой и вылетает с турнира")
->>>>>>> Stashed changes
                 break
 
             self.hit(player1, player2)
 
             if player2.hp <= 0:
-<<<<<<< Updated upstream
-                break
-
-=======
                 print(f"Игрок {player2.name} {player2.nickname} проигрывает бой и вылетает с турнира")
                 break
             print()
->>>>>>> Stashed changes
             self.print_hp(player1, player2)
 
         if player1.hp > 0:
@@ -73,34 +60,6 @@ class Fight:
         player2.hp = 100
         return player2
 
-<<<<<<< Updated upstream
-
-    def hit(
-            self,
-            player1: Mage | Archer | Warrior,
-            player2: Mage | Archer | Warrior
-    ):
-
-        player2.hp -= player1.damage
-        self.print_hit(player1, player2)
-        player1.hp -= player2.damage
-        self.print_hit(player2, player1)
-
-
-    def input_info(self, player1, player2):
-
-        print(f"Раунд {self.rounds}\nИмя первого игрока: {player1.name}, Никнейм первого игрока: {player1.nickname}\n"
-              f"Имя второго игрока: {player2.name}, Никнейм второго игрока: {player2.nickname}")
-
-
-
-    @staticmethod
-    def print_hit(player1, player2):
-
-        print(f'Игрок {player1.name} {player1.nickname} нанес удар, '
-              f'Нанес урона: {player1.damage}, Оружием: {player1.weapon_type},'
-              f' Игроку: {player2.name}')
-=======
     @staticmethod
     def hit(
             player1: Mage | Archer | Warrior,
@@ -159,16 +118,11 @@ class Fight:
         # print(f'Игрок {player1.name} {player1.nickname} нанес удар, '
         #       f'Нанес урона: {damage}, крит {crit} Оружием: {player1.weapon_type},'
         #       f' Игроку: {player2.name}')
->>>>>>> Stashed changes
 
 
     @staticmethod
     def print_hp(player1, player2):
-<<<<<<< Updated upstream
-
-=======
         # time.sleep(2)
->>>>>>> Stashed changes
         print(f"Здоровье игрока {player1.name} {player1.nickname}: {player1.hp}")
         print(f"Здоровье игрока {player2.name} {player2.nickname}: {player2.hp}")
 
@@ -177,10 +131,6 @@ class Fight:
     def winner(player):
 
         if len(player) <= 1:
-<<<<<<< Updated upstream
-            print(f"Победитель турнира: {player}")
-=======
             # time.sleep(2)
             print()
             print(f"Победитель турнира: {player[0].name} {player[0].nickname}")
->>>>>>> Stashed changes

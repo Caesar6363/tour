@@ -1,19 +1,3 @@
-<<<<<<< Updated upstream
-from src.heroes_generator import HeroesGenerator
-from src.tournamnet import Fight
-
-
-
-def main():
-    generator = HeroesGenerator()
-    heroes = generator.get_heroes(2)
-
-
-    fight = Fight()
-    fight.tournament(heroes)
-
-main()
-=======
 import asyncio
 from websockets.asyncio.server import serve
 from websockets.exceptions import ConnectionClosedOK
@@ -46,4 +30,3 @@ async def main():
 
 
 asyncio.run(main())
->>>>>>> Stashed changes

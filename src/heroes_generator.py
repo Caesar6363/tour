@@ -14,15 +14,9 @@ class HeroesGenerator:
     @staticmethod
     def _get_challenger():
 
-<<<<<<< Updated upstream
-        intelligence = 100
-        agility = 40
-        strength = 200
-=======
         intelligence = r.randint(20, 100)
         agility = r.randint(20, 100)
         strength = r.randint(20, 100)
->>>>>>> Stashed changes
 
 
         hero = [Mage(HeroesStats(), intelligence),
