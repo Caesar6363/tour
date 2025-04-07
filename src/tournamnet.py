@@ -40,10 +40,8 @@ class Fight:
     ) -> Mage | Archer | Warrior:
         
         while player1.hp > 0 and player2.hp > 0:
-            if player1.hp > 0:
-                player1.attack(player2)
-            if player2.hp > 0:
-                player2.attack(player1)
+            player1.attack(player2)
+            player2.attack(player1)
 
         if player1.hp > 0:
             return player1
