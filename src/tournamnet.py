@@ -5,6 +5,7 @@ from src.heroes import (
     Warrior,
     BaseHero
 )
+from colorama import Fore
 
 class Fight:
 
@@ -58,8 +59,8 @@ class Fight:
     @staticmethod
     def print_hp(player1, player2):
         # time.sleep(2)
-        print(f"Здоровье игрока {player1.name} {player1.nickname}: {player1.hp}")
-        print(f"Здоровье игрока {player2.name} {player2.nickname}: {player2.hp}")
+        print(Fore.GREEN + f"Здоровье игрока {player1.name} {player1.nickname}: {player1.hp}")
+        print(Fore.GREEN + f"Здоровье игрока {player2.name} {player2.nickname}: {player2.hp}")
 
 
     @staticmethod
