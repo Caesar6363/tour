@@ -13,11 +13,11 @@ class HeroesStats:
     hp: int = 100
     weapon_type: str = r.choice(weapon_types)
     mana_pool: int = 50
-    damage: list = [10, 11, 12, 13, 14, 15]
+    damage: list = [3, 4, 5, 6, 7, 8]
     armor: int = 50
     dodge_chance: int = r.randint(0, 5)
     block_chance: int = r.randint(0, 8)
-    critical_damage_chance: list = [10, 11, 12, 13, 14, 15]
+    critical_damage_chance: list = [6, 7, 8, 9, 10, 11]
 
 
     def __init__(self):
@@ -26,8 +26,8 @@ class HeroesStats:
         self.hp = 100
         self.weapon_type = r.choice(weapon_types)
         self.mana_pool = 50
-        self.damage = [10, 11, 12, 13, 14, 15]
+        self.damage = [3, 4, 5, 6, 7, 8]
         self.armor = 50
         self.dodge_chance = r.randint(0, 5)
         self.block_chance = r.randint(0, 8)
-        self.critical_damage_chance = [10, 11, 12, 13, 14, 15]
+        self.critical_damage_chance = [6, 7, 8, 9, 10, 11]
