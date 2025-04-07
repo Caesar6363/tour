@@ -31,6 +31,9 @@ class Fight:
         self.input_info(player1, player2)
         win = self.duel(player1, player2)
         self.winner(win)
+        # Regeneration HP after duel
+        player1.regenHp()
+        player2.regenHp()
 
 
     def duel(

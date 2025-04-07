@@ -1,6 +1,7 @@
 import random as r
-from typing import Self
+from colorama import Fore
 from src.models.stats import HeroesStats
+from ..utils.set_color import Colored
 class BaseHero:
 
     def __init__(
@@ -19,9 +20,10 @@ class BaseHero:
         self.block_chance = stats.block_chance
         self.critical_damage_chance = stats.critical_damage_chance
 
-    def defense(self, mySelf, damage):
-        _damage = damage - (self.dodge_chance + self.block_chance)
-        print(f'{self.name}({self.hp}) блокирует {mySelf.name} и получает {_damage} урона')
+    def defense(self, enemy, damage):
+        block = self.dodge_chance + self.block_chance
+        _damage = damage - block
+        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.LIGHTBLACK_EX)}) урона от {enemy.name}({Colored.red(enemy.hp)})')
         print('')
         self.hp = self.hp - _damage
 
@@ -31,6 +33,14 @@ class BaseHero:
 
         print(f'{self.name}({self.hp}) бьет {player2.name} на {damage} урона')
         player2.defense(self, damage)
+
+    def regenHp(self, amount = None):
+        if amount:
+            self.hp += amount
+            return self.hp
+        self.hp = 100
+        return self.hp
+        
     
     def __repr__(self):
         return f"Имя: {self.name}, Ник: {self.nickname}, HP: {self.hp}, Оружие: {self.weapon_type}"
