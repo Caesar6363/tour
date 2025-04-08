@@ -25,7 +25,8 @@ class BaseHero:
     def defense(self, enemy, damage):
         block = self.dodge_chance + self.block_chance
         _damage = damage - block
-        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.BLACK)}) урона от {enemy.name}({Colored.red(enemy.hp)})')
+        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.BLACK)})'
+              f' урона от {enemy.name}({Colored.red(enemy.hp)})')
         print('')
         self.hp = self.hp - _damage
 
