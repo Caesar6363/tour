@@ -120,7 +120,9 @@ class Fight:
 
     def input_info(self, player1, player2):
         print()
-        print(Fore.YELLOW + f"Раунд {self.rounds}\n\nИмя первого игрока: {player1.name}, Никнейм первого игрока: {player1.nickname}\n"
+        print(Fore.YELLOW + f"Раунд {self.rounds}\n\n"
+                            f"Имя первого игрока: {player1.name}, "
+                            f"Никнейм первого игрока: {player1.nickname}\n"
               f"Имя второго игрока: {player2.name}, Никнейм второго игрока: {player2.nickname}")
 
 
