@@ -1,6 +1,5 @@
 import random as r
 from colorama import Fore
-from src.heroes import (Archer, Mage, Warrior)
 from src.models.stats import HeroesStats
 from ..utils.set_color import Colored
 
@@ -25,19 +24,20 @@ class BaseHero:
     def defense(self, enemy, damage):
         block = self.dodge_chance + self.block_chance
         _damage = damage - block
-        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.BLACK)})'
+        _damage = max(_damage, 0)
+        print(f'{self.name}({Colored.red(self.hp)}) получает {Colored.custom(_damage, Fore.GREEN)}'
+              f'({Colored.custom(block, Fore.BLACK)})'
               f' урона от {enemy.name}({Colored.red(enemy.hp)})')
         print('')
         self.hp = self.hp - _damage
 
-    def attack(self, enemy: Mage | Archer | Warrior):
-        player2 = enemy
-        damage = r.choice(player2.damage) + r.choice(player2.critical_damage_chance)
+    def attack(self, enemy):
+        damage = r.choice(enemy.damage) + r.choice(enemy.critical_damage_chance)
 
-        print(f'{self.name}({self.hp}) бьет {player2.name} на {damage} урона')
-        player2.defense(self, damage)
+        print(f'{self.name}({Colored.red(self.hp)}) бьет {enemy.name} на {Colored.custom(damage, Fore.GREEN)} урона')
+        enemy.defense(self, damage)
 
-    def regenHp(self, amount = None):
+    def regen_hp(self, amount=None):
         if amount:
             self.hp += amount
             return self.hp

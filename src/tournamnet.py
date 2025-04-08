@@ -12,7 +12,8 @@ class Fight:
     def __init__(self):
         self.rounds = 0
 
-    def getPlayers(self, heroes: list[BaseHero]) -> list[BaseHero]:
+    @staticmethod
+    def get_players(heroes: list[BaseHero]) -> list[BaseHero] | None:
         if len(heroes) <= 1:
             return print("Нет участников для проведения турнира. Прорекламируйте ваш турнир:)")
 
@@ -25,35 +26,37 @@ class Fight:
 
     def tournament(self, heroes: list[BaseHero]):
         
-        [player1, player2] = self.getPlayers(heroes)
+        [player1, player2] = self.get_players(heroes)
 
         self.rounds += 1
         self.input_info(player1, player2)
         win = self.duel(player1, player2)
         self.winner(win)
-        # Убрать реген
-        player1.regenHp()
-        player2.regenHp()
 
 
+
+    @staticmethod
     def duel(
-            self,
             player1: Mage | Archer | Warrior,
             player2: Mage | Archer | Warrior
     ) -> Mage | Archer | Warrior:
         
         while player1.hp > 0 and player2.hp > 0:
-            player1.attack(player2)
-            player2.attack(player1)
+            if player2.hp > 0:
+                player1.attack(player2)
+                if player2.hp <= 0:
+                    player1.regen_hp()
+                    return player1
+
+            if player1.hp > 0:
+                player2.attack(player1)
+                if player1.hp <= 0:
+                    player2.regen_hp()
+                    return player2
 
         # Реализовать хп реген в соответствие с Димой идея
         # Победивший 100 хп
         # Проигравший регенится со временем
-
-        if player1.hp > 0:
-            return player1
-        else:
-            return player2
 
 
     def input_info(self, player1, player2):
@@ -70,4 +73,4 @@ class Fight:
 
     @staticmethod
     def winner(player):
-        print(f"Победитель турнира: {player.name} {player.nickname}")
+        print(f"Победитель турнира: {player.name} {player.nickname} {player.hp}")
