@@ -1,7 +1,9 @@
 import random as r
 from colorama import Fore
+from src.heroes import (Archer, Mage, Warrior)
 from src.models.stats import HeroesStats
 from ..utils.set_color import Colored
+
 class BaseHero:
 
     def __init__(
@@ -23,11 +25,11 @@ class BaseHero:
     def defense(self, enemy, damage):
         block = self.dodge_chance + self.block_chance
         _damage = damage - block
-        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.LIGHTBLACK_EX)}) урона от {enemy.name}({Colored.red(enemy.hp)})')
+        print(f'{self.name}({Colored.red(self.hp)}) получает {_damage}({Colored.custom(block, Fore.BLACK)}) урона от {enemy.name}({Colored.red(enemy.hp)})')
         print('')
         self.hp = self.hp - _damage
 
-    def attack(self, enemy):
+    def attack(self, enemy: Mage | Archer | Warrior):
         player2 = enemy
         damage = r.choice(player2.damage) + r.choice(player2.critical_damage_chance)
 

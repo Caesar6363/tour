@@ -1,5 +1,7 @@
 from src.heroes.hero_interface import BaseHero
 from src.models.stats import HeroesStats
+from src.utils.set_color import Colored
+
 class Mage(BaseHero):
     def __init__(
             self,

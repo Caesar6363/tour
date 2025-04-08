@@ -31,7 +31,7 @@ class Fight:
         self.input_info(player1, player2)
         win = self.duel(player1, player2)
         self.winner(win)
-        # Regeneration HP after duel
+        # Убрать реген
         player1.regenHp()
         player2.regenHp()
 
@@ -45,6 +45,10 @@ class Fight:
         while player1.hp > 0 and player2.hp > 0:
             player1.attack(player2)
             player2.attack(player1)
+
+        # Реализовать хп реген в соответствие с Димой идея
+        # Победивший 100 хп
+        # Проигравший регенится со временем
 
         if player1.hp > 0:
             return player1
