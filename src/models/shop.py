@@ -1,3 +1,5 @@
+# Добавить добавление экземпляра героя
+
 
 class Shop:
     def __init__(self):
@@ -41,6 +43,10 @@ class Shop:
             "slot_36": {}
         }
 
+
+    # Добавление слотов
+
+
     def add_item(self, slot, item_name, item_price):
         if slot in self.inventory_shop:
             self.inventory_shop[slot] = {"name": item_name, "price": item_price}
@@ -48,18 +54,26 @@ class Shop:
         else:
             print("Указан неверный слот.")
 
-    # def remove_item(self, slot):
-    #     if slot in self.inventory_shop:
-    #         removed_item = self.inventory_shop[slot]
-    #         if removed_item:
-    #             self.inventory_shop[slot] = {}
-    #             print(f"{removed_item['name']} был удален из {slot}.")
-    #         else:
-    #             print(f"{slot} пуст.")
-    #     else:
-    #         print("Указан неверный слот.")
 
-    def display_inventory(self):
+    # Удаление слотов
+
+
+    def delete_item(self, slot):
+        if slot in self.inventory_shop:
+            removed_item = self.inventory_shop[slot]
+            if removed_item:
+                self.inventory_shop[slot] = {}
+                print(f"{removed_item['name']} был удален из {slot}.")
+            else:
+                print(f"{slot} пуст.")
+        else:
+            print("Указан неверный слот.")
+
+
+    # Показывает слоты
+
+
+    def show_items(self):
         print("Инвентарь магазина:")
         for slot, item in self.inventory_shop.items():
             if item:
@@ -67,9 +81,11 @@ class Shop:
             else:
                 print(f"{slot}: пусто.")
 
-shop = Shop()
-shop.add_item("slot_1", "Зелье здоровья", 50)
-# shop.add_item("slot_2", "Меч", 150)
+
+
+# shop = Shop()
+# shop.add_item("slot_1", "Зелье здоровья", 50)
+# # shop.add_item("slot_2", "Меч", 150)
 # shop.display_inventory()
-# shop.remove_item("slot_1")
-shop.display_inventory()
+# # shop.remove_item("slot_1")
+# shop.display_inventory()

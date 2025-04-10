@@ -18,6 +18,15 @@ class HeroesStats:
     dodge_chance: int = r.randint(0, 5)
     block_chance: int = r.randint(0, 8)
     critical_damage_chance: list = [6, 7, 8, 9, 10, 11]
+    is_dead = False
+    inventory = {
+        "slot_1": {},
+        "slot_2": {},
+        "slot_3": {},
+        "slot_4": {},
+        "slot_5": {},
+        "slot_6": {},
+    }
 
 
     def __init__(self):
@@ -31,3 +40,15 @@ class HeroesStats:
         self.dodge_chance = r.randint(0, 5)
         self.block_chance = r.randint(0, 8)
         self.critical_damage_chance = [6, 7, 8, 9, 10, 11]
+        self.is_dead = False
+        self.inventory = {
+            "slot_1": {},
+            "slot_2": {},
+            "slot_3": {},
+            "slot_4": {},
+            "slot_5": {},
+            "slot_6": {},
+        }
+
+
+

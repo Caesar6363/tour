@@ -45,18 +45,23 @@ class Fight:
             if player2.hp > 0:
                 player1.attack(player2)
                 if player2.hp <= 0:
+                    print(f'{player2.name} покинул турнир')
+                    player2.set_dead(True)
                     player1.regen_hp()
+
                     return player1
 
             if player1.hp > 0:
                 player2.attack(player1)
                 if player1.hp <= 0:
+                    print(f'{player1.name} покинул турнир')
+                    player1.set_dead(True)
                     player2.regen_hp()
                     return player2
 
-        # Реализовать хп реген в соответствие с Димой идея
+        # Реализовать хп регенерацию в соответствие с Димой идея
         # Победивший 100 хп
-        # Проигравший регенится со временем
+        # Проигравший регенерацию со временем
 
 
     def input_info(self, player1, player2):
@@ -66,7 +71,6 @@ class Fight:
 
     @staticmethod
     def print_hp(player1, player2):
-        # time.sleep(2)
         print(Fore.GREEN + f"Здоровье игрока {player1.name} {player1.nickname}: {player1.hp}")
         print(Fore.GREEN + f"Здоровье игрока {player2.name} {player2.nickname}: {player2.hp}")
 
