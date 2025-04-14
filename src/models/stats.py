@@ -1,0 +1,54 @@
+import random as r
+
+
+names = ["Ульрих", "Ричард", "Раймунд", "Уильям", "Эдуард", "Бертран", "Готфрид", "Жак"]
+nicknames = ["Гордый", "Бодрый", "Справедливый", "Лысый", "Смелый", "Быстрый", "Великий", "Одноглазый"]
+weapon_types = ["Меч", "Двуручный_меч", "Парные_клинки", "Секира", "Булава", "Рапира",
+                "Сабля", "Палка", "Лук", "Арбалет", "Сюрикен", "Рогатка"]
+
+class HeroesStats:
+
+    name: str = r.choice(names)
+    nickname: str = r.choice(nicknames)
+    hp: int = 100
+    weapon_type: str = r.choice(weapon_types)
+    mana_pool: int = 50
+    damage: list = [3, 4, 5, 6, 7, 8]
+    armor: int = 50
+    dodge_chance: int = r.randint(0, 5)
+    block_chance: int = r.randint(0, 8)
+    critical_damage_chance: list = [6, 7, 8, 9, 10, 11]
+    is_dead = False
+    inventory = {
+        "slot_1": {},
+        "slot_2": {},
+        "slot_3": {},
+        "slot_4": {},
+        "slot_5": {},
+        "slot_6": {},
+    }
+
+
+    def __init__(self):
+        self.name = r.choice(names)
+        self.nickname = r.choice(nicknames)
+        self.hp = 100
+        self.weapon_type = r.choice(weapon_types)
+        self.mana_pool = 50
+        self.damage = [3, 4, 5, 6, 7, 8]
+        self.armor = 50
+        self.dodge_chance = r.randint(0, 5)
+        self.block_chance = r.randint(0, 8)
+        self.critical_damage_chance = [6, 7, 8, 9, 10, 11]
+        self.is_dead = False
+        self.inventory = {
+            "slot_1": {},
+            "slot_2": {},
+            "slot_3": {},
+            "slot_4": {},
+            "slot_5": {},
+            "slot_6": {},
+        }
+
+
+
