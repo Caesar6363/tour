@@ -1,0 +1,19 @@
+[tool.black]
+line-length = 79
+exclude = """
+  venv/
+  tests/
+  ./.venv
+  venv
+  idea
+  .idea
+  .venv
+  .black
+  .flake8
+  ./.black
+  ./.flake8
+  /.flake8
+  /.black
+  ./.pre-commit-config.yaml
+  pre-commit
+"""

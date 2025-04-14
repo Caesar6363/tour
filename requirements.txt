@@ -3,4 +3,4 @@ colorama
 flask
 black
 flake8
-pre-commit
+pre - commit
