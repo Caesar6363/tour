@@ -3,7 +3,7 @@ from src.tournamnet import Fight
 
 
 def main():
-    a=''
+    a = ""
     print("start")
     generator = HeroesGenerator()
     heroes = generator.get_heroes(2)
