@@ -1,6 +1,7 @@
 from src.heroes_generator import HeroesGenerator
 from src.tournamnet import Fight
 
+# Test
 
 def main():
     print('start')

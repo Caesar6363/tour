@@ -15,3 +15,4 @@ def login():
         return 'POST'
     else:
         return 'GET'
+
