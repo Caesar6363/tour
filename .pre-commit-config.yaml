@@ -3,6 +3,13 @@
 repos:
   - repo: local
     hooks:
+      - id: isort
+        name: isort
+        entry: isort --config ./tools/.isort.cfg .
+        language: system
+        types: [python]
+        pass_filenames: false
+
       - id: black
         name: black
         entry: black --config ./tools/.black .
