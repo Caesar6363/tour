@@ -1,6 +1,7 @@
 import random as r
-from src.heroes import Archer, Mage, Warrior, BaseHero
+
 from colorama import Fore
+from src.heroes import Archer, BaseHero, Mage, Warrior
 
 
 class Fight:

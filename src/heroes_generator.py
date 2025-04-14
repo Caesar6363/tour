@@ -1,6 +1,6 @@
 import random as r
-from src.heroes import Archer, Mage, Warrior, BaseHero
 
+from src.heroes import Archer, BaseHero, Mage, Warrior
 from src.models.stats import HeroesStats
 
 

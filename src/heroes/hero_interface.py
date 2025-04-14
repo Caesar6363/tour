@@ -1,6 +1,8 @@
 import random as r
+
 from colorama import Fore
 from src.models.stats import HeroesStats
+
 from ..utils.set_color import Colored
 
 
