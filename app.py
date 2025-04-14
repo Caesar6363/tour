@@ -4,14 +4,16 @@ from flask import request
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
     return "Hello, World!"
 
-@app.route('/user', methods=['GET', 'POST'])
+
+@app.route("/user", methods=["GET", "POST"])
 def login():
-    if request.method == 'POST':
+    if request.method == "POST":
         print(request)
-        return 'POST'
+        return "POST"
     else:
-        return 'GET'
+        return "GET"

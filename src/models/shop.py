@@ -40,23 +40,22 @@ class Shop:
             "slot_33": {},
             "slot_34": {},
             "slot_35": {},
-            "slot_36": {}
+            "slot_36": {},
         }
-
 
     # Добавление слотов
 
-
     def add_item(self, slot, item_name, item_price):
         if slot in self.inventory_shop:
-            self.inventory_shop[slot] = {"name": item_name, "price": item_price}
+            self.inventory_shop[slot] = {
+                "name": item_name,
+                "price": item_price,
+            }
             print(f"Добавлен {item_name} в {slot} за {item_price} монет.")
         else:
             print("Указан неверный слот.")
 
-
     # Удаление слотов
-
 
     def delete_item(self, slot):
         if slot in self.inventory_shop:
@@ -69,9 +68,7 @@ class Shop:
         else:
             print("Указан неверный слот.")
 
-
     # Показывает слоты
-
 
     def show_items(self):
         print("Инвентарь магазина:")
@@ -80,7 +77,6 @@ class Shop:
                 print(f"{slot}: {item['name']} - {item['price']} монет.")
             else:
                 print(f"{slot}: пусто.")
-
 
 
 # shop = Shop()
