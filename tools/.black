@@ -3,4 +3,6 @@ line-length = 79
 include = '\.pyi?$'
 exclude = """
   venv/
+  idea/
+  __pycache__/
 """
