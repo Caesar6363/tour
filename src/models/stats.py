@@ -41,8 +41,8 @@ class HeroesStats:
 
     name: str = r.choice(names)
     nickname: str = r.choice(nicknames)
-    hp: int = 100
-    weapon_type: str = r.choice(weapon_types)
+       hp: int = 100
+            weapon_type: str = r.choice(weapon_types)
     mana_pool: int = 50
     damage: list = [3, 4, 5, 6, 7, 8]
     armor: int = 50
@@ -79,3 +79,5 @@ class HeroesStats:
             "slot_5": {},
             "slot_6": {},
         }
+
+a = []
