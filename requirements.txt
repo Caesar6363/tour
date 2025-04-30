@@ -1,3 +1,7 @@
 websockets
 colorama
 flask
+black
+flake8
+pre-commit
+isort
